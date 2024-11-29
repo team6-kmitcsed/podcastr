@@ -64,16 +64,6 @@ const ProfileCard = ({
           </h1>
         </div>
         <figure className="flex gap-3 py-6">
-          <Image
-            src="/icons/headphone.svg"
-            width={24}
-            height={24}
-            alt="headphones"
-          />
-          <h2 className="text-16 font-semibold text-white-1">
-            {podcastData?.listeners} &nbsp;
-            <span className="font-normal text-white-2">monthly listeners</span>
-          </h2>
         </figure>
         {podcastData?.podcasts.length > 0 && (
           <Button

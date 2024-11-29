@@ -28,15 +28,6 @@ const PodcastDetails = ({ params: { podcastId } }: { params: { podcastId: Id<'po
         <h1 className="text-20 font-bold text-white-1">
           Currenty Playing
         </h1>
-        <figure className="flex gap-3">
-          <Image
-            src="/icons/headphone.svg"
-            width={24}
-            height={24}
-            alt="headphone"
-          />
-          <h2 className="text-16 font-bold text-white-1">{podcast?.views}</h2>
-        </figure>
       </header>
 
       <PodcastDetailPlayer 
@@ -44,7 +35,7 @@ const PodcastDetails = ({ params: { podcastId } }: { params: { podcastId: Id<'po
         podcastId={podcast._id}
         {...podcast}
       />
-      <div className='flex flex-col gap-4'>
+      <div className='flex flex-col gap-4 mt-10'>
       <h1 className='text-18 font-bold text-white-1'>Description</h1>
       <p className="text-white-2 text-16 pb-8 pt-[45px] font-medium max-md:text-center">{podcast?.podcastDescription}</p>
       </div>
