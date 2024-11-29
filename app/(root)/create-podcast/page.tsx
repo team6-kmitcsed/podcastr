@@ -129,7 +129,7 @@ const CreatePodcast = () => {
 
             <div className="flex flex-col gap-2.5">
               <Label className="text-16 font-bold text-white-1">
-                Select AI Voice (Currently not available, ps: will be available in future updates!)
+                Select AI Voice 
               </Label>
 
               <Select onValueChange={(value) => setVoiceType(value)}>
