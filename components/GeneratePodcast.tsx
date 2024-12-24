@@ -79,13 +79,19 @@ const GeneratePodcast = (props: GeneratePodcastProps) => {
         <Label className="text-16 font-bold text-white-1">
           Provide Podcast Transcript for voice conversion
         </Label>
-        <Textarea 
-          className="input-class font-light focus-visible:ring-offset-orange-1"
-          placeholder='Provide text to generate audio'
-          rows={5}
-          value={props.voicePrompt}
-          onChange={(e) => props.setVoicePrompt(e.target.value)}
-        />
+        <Textarea
+  className="input-class font-light focus-visible:ring-offset-orange-1"
+  placeholder="Provide text to generate audio"
+  rows={5}
+  value={props.voicePrompt}
+  onChange={(e) => {
+    // Trim only leading spaces
+    const withoutLeadingSpaces = e.target.value.replace(/^\s+/, '');
+    // Allow letters, numbers, spaces, comma, question mark, exclamation mark, and period
+    const filteredValue = withoutLeadingSpaces.replace(/[^a-zA-Z0-9\s,?!\.]/g, '');
+    props.setVoicePrompt(filteredValue);
+  }}
+/>
       </div>
       <div className="mt-5 w-full max-w-[200px]">
       <Button type="button" className="text-16 bg-orange-1 py-4 font-bold text-white-1" onClick={generatePodcast}>
